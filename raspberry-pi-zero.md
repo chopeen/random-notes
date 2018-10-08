@@ -8,7 +8,7 @@
     - added `tvservice -o` to `/etc/rc.local`
   - Bluetooth ([source](https://scribles.net/disabling-bluetooth-on-raspberry-pi/))
     - uninstalled the Bluetooth stack `sudo apt-get purge bluez`
-  - USB ([source 1](https://www.raspberrypi.org/forums/viewtopic.php?p=894674#p894674), [source 2](https://babaawesam.com/2014/01/24/power-saving-tips-for-raspberry-pi/))
+  - USB ([source](https://www.raspberrypi.org/forums/viewtopic.php?p=894674#p894674), [source 2](https://babaawesam.com/2014/01/24/power-saving-tips-for-raspberry-pi/))
     - added `echo 0 | tee /sys/devices/platform/soc/20980000.usb/buspower > /dev/null` to `/etc/rc.local`
     - different sources contradict each other, so I unsure if USB actually gets turned off
 
