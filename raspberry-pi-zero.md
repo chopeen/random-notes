@@ -5,7 +5,7 @@
 ## [TODO] Ideas to lower the power consumption
 
   - Disable HDMI - added `tvservice -o` to `/etc/rc.local` ([source](https://www.jeffgeerling.com/blogs/jeff-geerling/raspberry-pi-zero-conserve-energy))
-  - Disable Bluetooth
+  - Disable Bluetooth - uninstalled the Bluetooth stack `sudo apt-get purge bluez` ([source](https://scribles.net/disabling-bluetooth-on-raspberry-pi/))
   - Disable USB
 
 # Setup instructions for Pi-hole
