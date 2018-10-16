@@ -15,6 +15,7 @@
 # Setup instructions for Pi-hole
   - https://scotthelme.co.uk/securing-dns-across-all-of-my-devices-with-pihole-dns-over-https-1-1-1-1/
   - https://blog.cloudflare.com/cloudflare-argo-tunnel-with-rust-and-raspberry-pi/
+  - https://oliverhough.cloud/blog/configure-pihole-with-dns-over-https/
 
 ## Utility `cloudflared`
   - Segmentation fault - [older version](https://bin.equinox.io/a/4SUTAEmvqzB/cloudflared-2018.7.2-linux-arm.tar.gz) of the binary works fine ([details](https://github.com/cloudflare/cloudflared/issues/38))
