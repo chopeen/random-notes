@@ -17,7 +17,7 @@
   - https://blog.cloudflare.com/cloudflare-argo-tunnel-with-rust-and-raspberry-pi/
 
 ## Utility `cloudflared`
-  - Segmentation fault - [older version of the binary works fine](https://github.com/cloudflare/cloudflared/issues/38)
+  - Segmentation fault - [older version](https://bin.equinox.io/a/4SUTAEmvqzB/cloudflared-2018.7.2-linux-arm.tar.gz) of the binary works fine ([details](https://github.com/cloudflare/cloudflared/issues/38))
   - [`login` is not required for `proxy-dns`](https://developers.cloudflare.com/1.1.1.1/dns-over-https/cloudflared-proxy/)
 
 # Useful commands
