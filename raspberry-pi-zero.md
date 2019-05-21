@@ -16,9 +16,10 @@
   - https://scotthelme.co.uk/securing-dns-across-all-of-my-devices-with-pihole-dns-over-https-1-1-1-1/
     - However, the blog post says to modify `/etc/dnsmasq.d/01-pihole.conf` - this is not a good idea,
       since updating Pi-Hole will overwrite the changes.
-    - Instead, you can define the DNS server (`server=127.0.0.1#54`) in `/etc/dnsmasq.d/02-pihole-custom.conf`.
-    - Possibly, it should be also OK to have it in `/etc/pihole/setupVars.conf` - I think
-      these values (e.g. `PIHOLE_DNS_1=...`) are used during the update procedure.
+    - ~Instead, you can define the DNS server (`server=127.0.0.1#54`) in `/etc/dnsmasq.d/02-pihole-custom.conf`.~
+    - ~Possibly, it should be also OK to have it in `/etc/pihole/setupVars.conf` - I think
+      these values (e.g. `PIHOLE_DNS_1=...`) are used during the update procedure.~
+    - Configure a custom DNS server `127.0.0.1#54` at http://<pi-hole-IP>/admin/settings.php?tab=dns (appropriate entries are automatically added to all the config files mentioned above)
   - https://blog.cloudflare.com/cloudflare-argo-tunnel-with-rust-and-raspberry-pi/
   - https://oliverhough.cloud/blog/configure-pihole-with-dns-over-https/
 
