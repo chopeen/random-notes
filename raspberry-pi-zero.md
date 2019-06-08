@@ -4,13 +4,14 @@
 
 ## Disabling unused interfaces
 
-  - HDMI ([source](https://www.jeffgeerling.com/blogs/jeff-geerling/raspberry-pi-zero-conserve-energy))
-    - added `tvservice -o` to `/etc/rc.local`
   - Bluetooth ([source](https://scribles.net/disabling-bluetooth-on-raspberry-pi/))
     - uninstalled the Bluetooth stack `sudo apt-get purge bluez`
+  - HDMI ([source](https://www.jeffgeerling.com/blogs/jeff-geerling/raspberry-pi-zero-conserve-energy))
+    - added `tvservice -o` to `/etc/rc.local`
+    - removed the command (after struggling with _Failed to start Raise network interfaces_ and being unable to use the display)
   - USB ([source](https://www.raspberrypi.org/forums/viewtopic.php?p=894674#p894674), [source 2](https://babaawesam.com/2014/01/24/power-saving-tips-for-raspberry-pi/))
     - added `echo 0 | tee /sys/devices/platform/soc/20980000.usb/buspower > /dev/null` to `/etc/rc.local`
-    - different sources contradict each other, so I unsure if USB actually gets turned off
+    - removed the command
 
 # Setup instructions for Pi-hole
   - https://scotthelme.co.uk/securing-dns-across-all-of-my-devices-with-pihole-dns-over-https-1-1-1-1/
