@@ -24,9 +24,13 @@
   - https://blog.cloudflare.com/cloudflare-argo-tunnel-with-rust-and-raspberry-pi/
   - https://oliverhough.cloud/blog/configure-pihole-with-dns-over-https/
 
-## Utility `cloudflared`
-  - Segmentation fault - [older version](https://bin.equinox.io/a/4SUTAEmvqzB/cloudflared-2018.7.2-linux-arm.tar.gz) of the binary works fine ([details](https://github.com/cloudflare/cloudflared/issues/38))
-  - [`login` is not required for `proxy-dns`](https://developers.cloudflare.com/1.1.1.1/dns-over-https/cloudflared-proxy/)
+## Encrypted DNS
+  - Utility `cloudflared`
+    - Segmentation fault - [older version](https://bin.equinox.io/a/4SUTAEmvqzB/cloudflared-2018.7.2-linux-arm.tar.gz) of the binary works fine ([details](https://github.com/cloudflare/cloudflared/issues/38))
+    - [`login` is not required for `proxy-dns`](https://developers.cloudflare.com/1.1.1.1/dns-over-https/cloudflared-proxy/)
+  - DNSCrypt
+    - https://itchy.nl/raspberry-pi-3-with-openvpn-pihole-dnscrypt
+    - https://download.dnscrypt.info/dnscrypt-resolvers/v2/public-resolvers.md
 
 # Useful commands
 
