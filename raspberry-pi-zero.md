@@ -57,3 +57,11 @@
     over_voltage=4
 
   - [Suspected hardware issue](https://github.com/raspberrypi/linux/issues/2555#issuecomment-394105250)
+  
+# Blocking page
+
+ - Set `BLOCKINGMODE=IP` in `/etc/pihole/pihole-FTL.conf`
+ - `sudo service pihole-FTL restart`
+
+ - The blocking page is stored in `/var/www/html/pihole`; pros and cons of different blocking modes are described
+   in https://docs.pi-hole.net/ftldns/blockingmode/
