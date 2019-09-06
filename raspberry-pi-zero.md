@@ -63,5 +63,5 @@
  - Set `BLOCKINGMODE=IP` in `/etc/pihole/pihole-FTL.conf`
  - `sudo service pihole-FTL restart`
 
- - The blocking page is stored in `/var/www/html/pihole`; pros and cons of different blocking modes are described
-   in https://docs.pi-hole.net/ftldns/blockingmode/
+The blocking page is stored in `/var/www/html/pihole`; pros and cons of different blocking modes are described
+in https://docs.pi-hole.net/ftldns/blockingmode/
