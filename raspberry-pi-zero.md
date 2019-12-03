@@ -65,3 +65,7 @@
 
 The blocking page is stored in `/var/www/html/pihole`; pros and cons of different blocking modes are described
 in https://docs.pi-hole.net/ftldns/blockingmode/
+
+# Misc
+
+ - [Raspberry not showing on the DHCP Clients List (in router configuration)](https://discourse.pi-hole.net/t/pi-hole-not-visible-in-routers-dhcp-client-list/10841)
