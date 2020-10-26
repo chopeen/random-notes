@@ -31,18 +31,23 @@ Since it was successful, it does not try to use `github_chopeen` at all.
 
 ## Solution
 
-Select the key file to be used manually:
+Use [directory-specific settings](https://isolveproblems.pl/git/using-multiple-git-accounts-without-hassle.html).
 
-    # remove all cached keys
-    eval `ssh-agent -s`
-    ssh-add -D
-    
-    # verify they were removed
-    ssh-add -l
-    
-    # add a key
-    ssh-add ~/.ssh/github_chopeen
+### .gitconfig
 
-It is also possible to define a permanent configuration in `.ssh/config`, but later you
-need to replace `github.com` with alternative domain names specified in SSH configuration.
+    # Don't add any other settings below the line!
+    # They could overwrite the custom ones added with [includeIf].
 
+    [includeIf "gitdir:~/git/GitHub-chopeen/"]
+        path = ~/.gitconfig_github_private
+
+### ~/.gitconfig_github_private 
+
+    [user]
+        name = chopeen
+        email = <EMAIL>
+        signingkey = <KEY>
+    [core]
+        sshCommand = ssh -i ~/.ssh/github_chopeen
+    [commit]
+        gpgsign = true
