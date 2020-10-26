@@ -25,21 +25,60 @@
   - https://oliverhough.cloud/blog/configure-pihole-with-dns-over-https/
 
 ## Encrypted DNS
-  - ~Utility `cloudflared`~
-    - ~Segmentation fault - [older version](https://bin.equinox.io/a/4SUTAEmvqzB/cloudflared-2018.7.2-linux-arm.tar.gz) of the binary works fine ([details](https://github.com/cloudflare/cloudflared/issues/38))~
-    - ~[`login` is not required for `proxy-dns`](https://developers.cloudflare.com/1.1.1.1/dns-over-https/cloudflared-proxy/)~
-  - DNSCrypt
-    - https://itchy.nl/raspberry-pi-3-with-openvpn-pihole-dnscrypt
-    - https://download.dnscrypt.info/dnscrypt-resolvers/v2/public-resolvers.md
+
+- ~Utility `cloudflared`~
+  - ~Segmentation fault - [older version](https://bin.equinox.io/a/4SUTAEmvqzB/cloudflared-2018.7.2-linux-arm.tar.gz) of the binary works fine ([details](https://github.com/cloudflare/cloudflared/issues/38))~
+  - ~[`login` is not required for `proxy-dns`](https://developers.cloudflare.com/1.1.1.1/dns-over-https/cloudflared-proxy/)~
+- DNSCrypt
+  - https://itchy.nl/raspberry-pi-3-with-openvpn-pihole-dnscrypt
+    - Wayback Machine copy
+        > Install and setup DNSCrypt
+        > 
+        > Mostly sourced from https://github.com/pi-hole/pi-hole/wiki/DNSCrypt-2.0
+        > 
+        >     Install location shall be /opt. This is where we will place the dnscrypt-proxy files.
+        >     cd /opt
+        >     Download DNSCrypt.
+        >     sudo wget https://github.com/jedisct1/dnscrypt-proxy/releases/download/2.0.19/dnscrypt-proxy-linux_arm-2.0.19.tar.gz
+        >     Extract prebuilt binary.
+        >     sudo tar -xf dnscrypt-proxy-linux_arm-2.0.19.tar.gz`
+        >     Rename the extracted folder.
+        >     sudo mv linux-arm dnscrypt-proxy
+        >     cd into extracted directory.
+        >     cd dnscrypt-proxy
+        >     Create a configuration file based on the example one.
+        >     sudo cp example-dnscrypt-proxy.toml dnscrypt-proxy.toml
+        >     Edit the toml file.
+        >     sudo nano dnscrypt-proxy.toml
+        >     Edit the port, since 53 is already being used by Pi-Hole. This is the listen_addresses line.
+        >     I set listen_addresses = ['127.0.0.1:54','[::1]:54'].
+        >     I set require_dnssec = true.
+        >     I set server_names = ['dnscrypt.nl-ns0'].
+        >     Install dnscrypt-proxy service.
+        >     sudo ./dnscrypt-proxy -service install
+        >     Start the new service.
+        >     sudo ./dnscrypt-proxy -service start
+        > 
+        > DNSCrypt Proxy running successfully.
+        > Fig 3. DNSCrypt Proxy running.
+        > Configure Pi-Hole
+        > 
+        > Add the dnscrypt-proxy server to Pi-Hole on the Pi-Hole admin page.
+        > Pi-Hole with custom IP and port
+        > Fig 4. Pi-Hole with custom IP and port.
+        > Configure your clients
+        > 
+        > Configure your clients to use your Pi-Hole IP address as the DNS server or enter it into your router so every client on your local network will be using Pi-Hole filtering while being DNSCrypt secured.
+  - https://download.dnscrypt.info/dnscrypt-resolvers/v2/public-resolvers.md
 
 # Useful commands
 
-	sudo /usr/sbin/logrotate --force /etc/logrotate.conf
+    sudo /usr/sbin/logrotate --force /etc/logrotate.conf
 
-	watch -n1 'cat /sys/class/thermal/thermal_zone0/temp; cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq'
+    watch -n1 'cat /sys/class/thermal/thermal_zone0/temp; cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq'
 
-	sudo vcgencmd get_config over_voltage
-	sudo vcgencmd get_config force_turbo
+    sudo vcgencmd get_config over_voltage
+    sudo vcgencmd get_config force_turbo
 
 # Stability issues log
 
