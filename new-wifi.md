@@ -51,3 +51,8 @@ https://forum.qnap.net.pl/threads/pi-hole-%E2%80%93-blokowanie-reklam-ale-bez-pi
     /system scheduler add comment="Apply AdsBlock List" interval=1d \
     name="InstallAdsBlockListList" on-event=ReplaceAdsBlockList \
     start-date=jan/01/1970 start-time=08:20:39
+
+## Security
+
+- https://mikrotikon.pl/mikrotik-jako-router-domowy-konfiguracja-od-podstaw/
+- https://damianmac.pl/2020/03/20/mikrotik-basic-security/
