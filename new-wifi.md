@@ -17,11 +17,11 @@ https://forum.qnap.net.pl/threads/pi-hole-%E2%80%93-blokowanie-reklam-ale-bez-pi
 
 1. Download the file `mikrotik_adblock_updater.rsc`
 
-        /tool fetch url="http://pool.qnapclub.pl/projects/tools/mikrotik-pihole-adlists/mikrotik_adblock_updater.rsc" mode=http;
+       /tool fetch url="http://pool.qnapclub.pl/projects/tools/mikrotik-pihole-adlists/mikrotik_adblock_updater.rsc" mode=http;
 
 2. Run it to create scripts and schedule them
 
-        /import mikrotik_adblock_updater.rsc
+       /import mikrotik_adblock_updater.rsc
 
 3. Go to System > Scripts to run `DownloadAdsBlockList` and `ReplaceAdsBlockList`
 
@@ -61,9 +61,9 @@ https://forum.qnap.net.pl/threads/pi-hole-%E2%80%93-blokowanie-reklam-ale-bez-pi
 
 1. Generate a self-signed certificate, with router's IP as the Common Name (CN)
 
-    openssl genrsa -out mikrotik-priv-key.pem 2048
-    openssl req -new -x509 -nodes -days 5555 -subj '/C=PL/O=Acme Corporation/CN=192.168.xx.yy' -key mikrotik-priv-key.pem -out mikrotik-pub-crt.pem
-    
+       openssl genrsa -out mikrotik-priv-key.pem 2048
+       openssl req -new -x509 -nodes -days 5555 -subj '/C=PL/O=Acme Corporation/CN=192.168.xx.yy' -key mikrotik-priv-key.pem -out mikrotik-pub-crt.pem
+
 2. FTP both files to the router
 
 3. Go to System/Certificates and import both files, first the public certificate and then the private key
