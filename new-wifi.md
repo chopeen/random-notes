@@ -1,4 +1,4 @@
-# New WiFI
+# New WiFi
 
 ## DNS over HTTPS
 
@@ -70,3 +70,7 @@ https://forum.qnap.net.pl/threads/pi-hole-%E2%80%93-blokowanie-reklam-ale-bez-pi
     - :bulb: Only one new certificate will appear on the list, with `KT` flags
 
 4. Go to IP/Services and configure `www-ssl` to use the certificate
+
+## Ideas
+
+- Let's Encrypt certificate instead of a self-signed one (https://github.com/gitpel/letsencrypt-routeros)
