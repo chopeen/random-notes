@@ -56,3 +56,17 @@ https://forum.qnap.net.pl/threads/pi-hole-%E2%80%93-blokowanie-reklam-ale-bez-pi
 
 - https://mikrotikon.pl/mikrotik-jako-router-domowy-konfiguracja-od-podstaw/
 - https://damianmac.pl/2020/03/20/mikrotik-basic-security/
+
+### SSL for the configuration panel
+
+1. Generate a self-signed certificate, with router's IP as the Common Name (CN)
+
+    openssl genrsa -out mikrotik-priv-key.pem 2048
+    openssl req -new -x509 -nodes -days 5555 -subj '/C=PL/O=Acme Corporation/CN=192.168.xx.yy' -key mikrotik-priv-key.pem -out mikrotik-pub-crt.pem
+    
+2. FTP both files to the router
+
+3. Go to System/Certificates and import both files, first the public certificate and then the private key
+    - :bulb: Only one new certificate will appear on the list, with `KT` flags
+
+4. Go to IP/Services and configure `www-ssl` to use the certificate
