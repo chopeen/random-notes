@@ -11,6 +11,10 @@ https://forum.mikrotik.com/viewtopic.php?t=160243#p787643
     ./ip dns set use-doh-server=https://1.1.1.1/dns-query verify-doh-cert=yes
     ./ip dns set servers=""
 
+https://mikrotikon.pl/dns-over-https-czyli-szyfrowany-dns-w-routeros/
+
+Using only the 1.1.1.1 certificate, instead of a complete set.
+
 ## Simple ad blocking
 
 https://forum.qnap.net.pl/threads/pi-hole-%E2%80%93-blokowanie-reklam-ale-bez-pi-hole-za-to-w-samym-mikrotiku.27017/
