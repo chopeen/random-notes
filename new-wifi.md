@@ -114,7 +114,9 @@ sudo chown -R unifi:unifi /usr/lib/unifi/logs/server.log
 sudo service unifi start         
 ```
 
-In the end, the Mongo database turned out so badly corrupted that I ended up reinstalling `unifi` and restoring the configuration from backup.
+In the end, the Mongo database turned out so badly corrupted that I ended up reinstalling `unifi` and restoring the configuration from backup. After installing `unifi`, you need to run the wizard `https://192.168.xx.yy:8443/setup/` and there is an option to perform a restore.
+
+The backup files are stored in `/usr/lib/unifi/data/backup`.
 
 ## Ideas
 
