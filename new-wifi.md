@@ -101,13 +101,18 @@ Tue Jun 29 21:29:42.829 Error: couldn't connect to server 127.0.0.1:27117 at src
 exception: connect failed
 ```
 
-In that case, you may [remove the journal files manually](https://juckins.net/dokuwiki/doku.php?id=install_unifi_on_ubuntu):
+[Repair the database](https://help.ui.com/hc/en-us/articles/360006634094-UniFi-Repairing-Database-Issues-on-the-UniFi-Network-Application#3):
 
 ```
-sudo service mongodb stop
-sudo rm -rf /var/lib/mongodb/journal/*
-sudo service mongodb start
-```                                                                                    
+sudo service unifi stop
+sudo mongod --dbpath /usr/lib/unifi/data/db --smallfiles --logpath /usr/lib/unifi/logs/server.log --repair
+
+# restore the proper ownership
+sudo chown -R unifi:unifi /usr/lib/unifi/data/db/
+sudo chown -R unifi:unifi /usr/lib/unifi/logs/server.log 
+
+sudo service unifi start         
+```
 
 ## Ideas
 
