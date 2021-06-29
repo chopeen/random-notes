@@ -114,6 +114,8 @@ sudo chown -R unifi:unifi /usr/lib/unifi/logs/server.log
 sudo service unifi start         
 ```
 
+In the end, the Mongo database turned out so badly corrupted that I ended up reinstalling `unifi` and restoring the configuration from backup.
+
 ## Ideas
 
 - Let's Encrypt certificate instead of a self-signed one (https://github.com/gitpel/letsencrypt-routeros)
