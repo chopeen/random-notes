@@ -75,6 +75,40 @@ https://forum.qnap.net.pl/threads/pi-hole-%E2%80%93-blokowanie-reklam-ale-bez-pi
 
 4. Go to IP/Services and configure `www-ssl` to use the certificate
 
+## Unifi
+
+### Cannot connect though app or Web interface
+
+Potential reason:
+
+```
+$ sudo less /var/log/unifi/mongod.log
+
+NOTE: This is a 32 bit MongoDB binary.
+       32 bit builds are limited to less than 2GB of data (or less with --journal).
+       Note that journaling defaults to off for 32 bit and is currently off.
+       See http://dochub.mongodb.org/core/32bit
+```
+
+If so, [mongo_prune_js.js](https://help.ui.com/hc/en-us/articles/204911424-UniFi-How-to-Remove-Prune-Older-Data-and-Adjust-Mongo-Database-Size#4) may fail with error:
+
+```
+$ mongo --port 27117 < mongo_prune_js.js
+
+MongoDB shell version: 2.4.14
+connecting to: 127.0.0.1:27117/test
+Tue Jun 29 21:29:42.829 Error: couldn't connect to server 127.0.0.1:27117 at src/mon
+exception: connect failed
+```
+
+In that case, you may [remove the journal files manually](https://juckins.net/dokuwiki/doku.php?id=install_unifi_on_ubuntu):
+
+```
+sudo service mongodb stop
+sudo rm -rf /var/lib/mongodb/journal/*
+sudo service mongodb start
+```                                                                                    
+
 ## Ideas
 
 - Let's Encrypt certificate instead of a self-signed one (https://github.com/gitpel/letsencrypt-routeros)
