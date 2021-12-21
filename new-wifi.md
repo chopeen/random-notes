@@ -118,6 +118,12 @@ In the end, the Mongo database turned out so badly corrupted that I ended up rei
 
 The backup files are stored in `/usr/lib/unifi/data/backup`.
 
+## Running in Docker
+
+- [Instruction 1](https://tynick.com/blog/09-08-2019/unifi-controller-with-raspberry-pi-and-docker/)
+- [Instruction 2](https://miketabor.com/running-ubiquiti-unifi-controller-in-docker-on-synology-nas/)
+- [jacobalberty/unifi-docker](https://github.com/jacobalberty/unifi-docker)
+
 ## Ideas
 
 - Let's Encrypt certificate instead of a self-signed one (https://github.com/gitpel/letsencrypt-routeros)
