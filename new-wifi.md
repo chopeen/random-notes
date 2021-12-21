@@ -131,6 +131,10 @@ Pi Zero's architecture is unsupported:
 
     WARNING: The requested image's platform (linux/arm/v7) does not match the detected host platform (linux/arm/v6) and no specific platform was requested
 
+## Installation script
+
+[UniFi Easy Update Script](https://community.ui.com/questions/UniFi-Installation-Scripts-or-UniFi-Easy-Update-Script-or-UniFi-Lets-Encrypt-or-UniFi-Easy-Encrypt-/ccbc7530-dd61-40a7-82ec-22b17f027776)
+
 ## Ideas
 
 - Let's Encrypt certificate instead of a self-signed one (https://github.com/gitpel/letsencrypt-routeros)
