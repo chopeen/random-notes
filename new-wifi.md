@@ -123,6 +123,13 @@ The backup files are stored in `/usr/lib/unifi/data/backup`.
 - [Instruction 1](https://tynick.com/blog/09-08-2019/unifi-controller-with-raspberry-pi-and-docker/)
 - [Instruction 2](https://miketabor.com/running-ubiquiti-unifi-controller-in-docker-on-synology-nas/)
 - [jacobalberty/unifi-docker](https://github.com/jacobalberty/unifi-docker)
+- [ryansch/docker-unifi-rpi](https://github.com/ryansch/docker-unifi-rpi)
+
+### Error
+
+Pi Zero's architecture is unsupported:
+
+    WARNING: The requested image's platform (linux/arm/v7) does not match the detected host platform (linux/arm/v6) and no specific platform was requested
 
 ## Ideas
 
