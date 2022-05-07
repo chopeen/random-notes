@@ -2,6 +2,13 @@
   - [Official requirements](https://www.raspberrypi.org/documentation/faqs/#pi-power)
    (Raspberry Pi Zero W/WH - 1.2A)
 
+## LED
+
+Pi Zero has no `POWER` LED.
+
+The `ACT` LED does not blink when Pi cannot boot, i.e. when the SD becomes corrupt, the Pi may seem dead
+([diagnosing a 'dead' Pi](https://learn.adafruit.com/raspberry-pi-zero-creation/is-my-pi-zero-dead)).
+
 ## Disabling unused interfaces
 
   - Bluetooth ([source](https://scribles.net/disabling-bluetooth-on-raspberry-pi/))
