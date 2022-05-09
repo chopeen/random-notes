@@ -115,3 +115,4 @@ in https://docs.pi-hole.net/ftldns/blockingmode/
 # Misc
 
  - [Raspberry not showing on the DHCP Clients List (in router configuration)](https://discourse.pi-hole.net/t/pi-hole-not-visible-in-routers-dhcp-client-list/10841)
+ - [No default `pi` user](https://www.raspberrypi.com/news/raspberry-pi-bullseye-update-april-2022/)
