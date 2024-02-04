@@ -1,0 +1,26 @@
+# start: docker compose -f ./unifi-compose.yml up -d
+# stop:  docker compose -f ./unifi-compose.yml down
+
+version: "3"
+services:
+  unifi:
+    image: jacobalberty/unifi:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+      - "3478:3478/udp"
+    environment:
+      - TZ=Europe/Warsaw
+    volumes:
+      # adjust the path here
+      - /home/chopeen/unifi:/unifi
+    user: unifi
+    init: true
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /root/.docker/config.json:/config.json
+    # check every 12 h - 43200
+    command: --interval 3600
