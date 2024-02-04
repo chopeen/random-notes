@@ -19,8 +19,11 @@ services:
     init: true
   watchtower:
     image: containrrr/watchtower
+    restart: unless-stopped
+    # check every 12h
+    command: --interval 43200
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /root/.docker/config.json:/config.json
-    # check every 12 h - 43200
-    command: --interval 3600
+      # uncomment if the Docker config exists, e.g. it may store credetials for private registries
+      # example: https://containrrr.dev/watchtower/usage-overview/
+      # - /root/.docker/config.json:/config.json
